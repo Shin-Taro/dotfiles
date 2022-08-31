@@ -123,8 +123,11 @@ eval "$(fnm env --use-on-cd)"
 # enhancd
 source ~/enhancd/init.sh
 
+# override batcat
+alias bat='batcat'
+
 # my-aliases
-alias cdls='cd $(ls | fzf)'
+alias cdls='cd $(ls -a | fzf)'
 
 ## aliases for git
 alias fgc='git checkout $(git branch | fzf)'
