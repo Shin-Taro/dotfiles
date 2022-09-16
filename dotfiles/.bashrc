@@ -133,7 +133,8 @@ function md() {
 
 # my-aliases
 alias cdls='md $(ls -a | fzf)'
-alias pk='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
+alias kp='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
+alias clip='clip.exe'
 
 ## aliases for git
 alias fgc='git checkout $(git branch | fzf)'
