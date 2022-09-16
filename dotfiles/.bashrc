@@ -118,7 +118,7 @@ fi
 . "$HOME/.cargo/env"
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 
 # enhancd
 source ~/enhancd/init.sh
@@ -128,6 +128,7 @@ alias bat='batcat'
 
 # my-aliases
 alias cdls='cd $(ls -a | fzf)'
+alias pk='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
 
 ## aliases for git
 alias fgc='git checkout $(git branch | fzf)'
@@ -136,6 +137,7 @@ alias grh='git reset --hard HEAD'
 alias glo='git log --oneline'
 alias gs='git status'
 alias gric='git rebase -i'
+alias glh='`git log --oneline | fzf | sed -e "s/\([a-z0-9]\{7\}\).*/\1/"`'
 
 # Start dockerd
 sudo /etc/init.d/docker start
