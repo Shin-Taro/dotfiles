@@ -126,8 +126,13 @@ source ~/enhancd/init.sh
 # override batcat
 alias bat='batcat'
 
+# my-functions
+function md() {
+  ecd $1 && cd .
+}
+
 # my-aliases
-alias cdls='cd $(ls -a | fzf)'
+alias cdls='md $(ls -a | fzf)'
 alias pk='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
 
 ## aliases for git
