@@ -146,13 +146,19 @@ alias kp='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 k
 alias lsbat='bat $(la | fzf)'
 
 ## aliases for git
-alias fgc='git checkout $(git branch | fzf)'
+alias gc='git checkout'
+alias fgc='gc $(git branch | fzf)'
 alias fgrb='git rebase $(git branch | fzf)'
 alias grh='git reset --hard HEAD'
 alias glo='git log --oneline'
 alias gs='git status'
-alias gric='git rebase -i'
-alias glh='`git log --oneline | fzf | sed -e "s/\([a-z0-9]\{7\}\).*/\1/"`'
+alias gri='git rebase -i'
+alias fgl='git log --oneline | fzf | sed -e "s/\([a-z0-9]\{7\}\).*/\1/" | xargs echo'
+alias fgri='gri $(fgl)'
+alias fgb='git branch --no-color | fzf | sed -e "s/* \(.*\)/\1/" | xargs echo'
+alias gbc='git branch --no-color | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/" | xargs echo'
+alias gpush='git push origin $(gcb)'
+alias gpull='git pull origin $(gcb)'
 
 # Start dockerd
 sudo /etc/init.d/docker start
