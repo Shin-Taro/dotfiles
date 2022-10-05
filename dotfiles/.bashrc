@@ -157,8 +157,8 @@ alias fgl='git log --oneline | fzf | sed -e "s/\([a-z0-9]\{7\}\).*/\1/" | xargs 
 alias fgri='gri $(fgl)'
 alias fgb='git branch --no-color | fzf | sed -e "s/* \(.*\)/\1/" | xargs echo'
 alias gbc='git branch --no-color | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/" | xargs echo'
-alias gpush='git push origin $(gcb)'
-alias gpull='git pull origin $(gcb)'
+alias gpush='git push origin $(gbc)'
+alias gpull='git pull origin $(gbc)'
 
 # Start dockerd
 sudo /etc/init.d/docker start
