@@ -8,5 +8,5 @@ for file in .*; do
   if [ "${file}" = "." ] || [ "${file}" = ".." ]; then
     continue
   fi
-    ln -s ${PWD}/${file} ${HOME}
+    ln -s -i ${PWD}/${file} ${HOME}
 done
