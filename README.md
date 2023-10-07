@@ -27,3 +27,7 @@ Finally, use set up scripts.
 ```
 curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/entry.sh | bash
 ```
+
+## for Ubuntu
+
+TBD
