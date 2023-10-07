@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # git config
-curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/git_config.sh | bash
+curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/modules/git_config.sh | bash
 
 # ssh key setting
-curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/link_ssh_key.sh | bash
+curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/modules/link_ssh_key.sh | bash
 
 # dotfilesをclone
 cd "${HOME}" || return
