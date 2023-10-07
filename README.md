@@ -1,5 +1,7 @@
 # Set up Scripts
 
+## for WSL2
+
 First, optimize wsl2 configuration.
 
 ```
