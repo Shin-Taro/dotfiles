@@ -6,7 +6,7 @@ curl -o ~/temp.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/s
 # ssh key setting
 curl -o ~/temp.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/modules/link_ssh_key.sh && . ~/temp.sh
 
-rm ~/tem.sh
+rm ~/temp.sh
 
 # dotfilesをclone
 cd "${HOME}" || return
