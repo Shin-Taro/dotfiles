@@ -11,7 +11,7 @@ curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/wsl_config.
 If you failed curl command, try this.
 
 ```
-chmod 666 /etc/wsl.conf && sudo sh -c "echo '[network]\ngenerateResolvConf = false\n[automount]\noptions = \"metadata\"'" >> /etc/wsl.conf
+sudo chmod 666 /etc/wsl.conf && sudo sh -c "echo '[network]\ngenerateResolvConf = false\n[automount]\noptions = \"metadata\"'" >> /etc/wsl.conf
 ```
 
 And reboot wsl2.
