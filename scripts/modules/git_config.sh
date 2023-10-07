@@ -1,4 +1,11 @@
 #!/bin/sh
 
-git config --global user.name "Shin-Taro"
-git config --global user.email sh.takahashi.113@gmail.com
+read -p "[USER_NAME]:" USER_NAME
+read -p "[EMAIL]:" EMAIL
+
+git config --global user.name "${USER_NAME}"
+git config --global user.email "${EMAIL}"
+
+git config --global --list
+
+echo "( ﾉ ﾟｰﾟ)ﾉ Complete git setting !!"
