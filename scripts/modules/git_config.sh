@@ -5,6 +5,7 @@ read -p "[EMAIL]:" EMAIL
 
 git config --global user.name "${USER_NAME}"
 git config --global user.email "${EMAIL}"
+git config --global core.editor vim
 
 git config --global --list
 
