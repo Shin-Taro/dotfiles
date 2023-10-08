@@ -7,4 +7,6 @@ CURRENT_DIRECTORY="$(dirname "${BASH_SOURCE[0]}")"
 . "${HOME}/.bashrc"
 . "${CURRENT_DIRECTORY}/modules/install_nodejs.sh"
 
-echo "( ﾉ ﾟｰﾟ)ﾉ Complete setup !!"
+echo -e "\n\e[32;1m=============================================\e[m\n
+\e[32;1m( ﾉ ﾟｰﾟ)ﾉ \e[m Complete setup.\n
+\e[32;1m=============================================\e[m\n"

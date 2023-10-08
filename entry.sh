@@ -15,3 +15,7 @@ git clone git@github.com:Shin-Taro/dotfiles.git
 # setup
 # shellcheck source=./dotfiles/scripts/setup.sh
 . ./dotfiles/scripts/setup.sh
+
+echo -e "\n\e[32;1m=============================================\e[m\n
+\e[32;1m( •̀ ω •́ )y \e[m Complete all setup process. Congratulations.\n
+\e[32;1m=============================================\e[m\n"

@@ -9,4 +9,6 @@ git config --global core.editor vim
 
 git config --global --list
 
-echo "( ﾉ ﾟｰﾟ)ﾉ Complete git setting !!"
+echo -e "\n\e[32;1m=============================================\e[m\n
+\e[32;1m( ﾉ ﾟｰﾟ)ﾉ \e[mSetting up the git configuration has been completed.\n
+\e[32;1m=============================================\e[m\n"
