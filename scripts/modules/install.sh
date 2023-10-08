@@ -1,5 +1,8 @@
 #!/bin/sh
 
+CURRENT_DIRECTORY="$(pwd)"
+
+cd ~ || return
 # Setup ubuntu development environment
 
 # sudo password
@@ -31,3 +34,8 @@ echo \
 sudo apt update && sudo apt upgrade -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+
+cd "${CURRENT_DIRECTORY}" || return
