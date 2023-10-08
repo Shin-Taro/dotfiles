@@ -162,4 +162,4 @@ alias gpull='git pull origin $(gbc)'
 alias gsu='git submodule update'
 
 # Start dockerd
-sudo /etc/init.d/docker start
+# sudo /etc/init.d/docker start
