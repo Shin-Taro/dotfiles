@@ -111,23 +111,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-. "$HOME/.cargo/env"
-
-# fnm
-eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
-
 # enhancd
 source ~/enhancd/init.sh
+
+# PATH to asdf
+. "$HOME/.asdf/asdf.sh"
+
+## nodejs & yarn installer by asdf
+alias asdf_node='asdf list-all nodejs | fzf | xargs -i asdf install nodejs {} && corepack enable && asdf reshim nodejs && node --version && yarn --version'
 
 # override batcat
 alias bat='batcat'
@@ -160,6 +151,3 @@ alias gbc='git branch --no-color | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/" | xargs
 alias gpush='git push origin $(gbc)'
 alias gpull='git pull origin $(gbc)'
 alias gsu='git submodule update'
-
-# Start dockerd
-# sudo /etc/init.d/docker start
