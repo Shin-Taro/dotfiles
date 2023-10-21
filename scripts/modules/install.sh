@@ -51,6 +51,8 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+sudo gpasswd -a $(whoami) docker
+
 echo -e "\n\e[32;1m=============================================\e[m\n
 \e[32;1m( ﾉ ﾟｰﾟ)ﾉ \e[m Complete: The section of installing docker.\n
 \e[32;1m=============================================\e[m\n"
