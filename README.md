@@ -1,7 +1,7 @@
 # Set up Scripts
 
 ## for WSL2
-
+### Process
 First, optimize wsl2 configuration.
 
 ```
@@ -37,6 +37,12 @@ Finally, use set up scripts.
 ```
 curl -o ~/temp_initialize.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/entry.sh && . ~/temp_initialize.sh && rm ~/temp_initialize.sh
 ```
+
+### Notes
+- Several operations are required during the process.
+- Only the ssh key needs to be set on the windows side first.
+- Set the alias in `enhancd/init.sh` to `ecd`.
+- Restart wsl (update docker execution permissions).
 
 ## for Ubuntu
 
