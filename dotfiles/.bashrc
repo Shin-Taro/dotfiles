@@ -128,6 +128,10 @@ function md() {
   ecd $1 && cd .
 }
 
+function gfc() {
+  git fetch origin $1 && git checkout $1
+}
+
 # alias for Windows clipboard
 alias clip='clip.exe'
 
