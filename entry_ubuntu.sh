@@ -6,7 +6,7 @@ rm ~/temp.sh
 
 # dotfilesをclone
 cd "${HOME}" || return
-git clone git@github.com:Shin-Taro/dotfiles.git
+git clone git@github_Shin-Taro:Shin-Taro/dotfiles.git
 
 # setup
 # shellcheck source=./dotfiles/scripts/setup.sh

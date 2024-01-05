@@ -1,7 +1,7 @@
 # Set up Scripts
 
 ## for WSL2
-
+### Process
 First, optimize wsl2 configuration.
 
 ```
@@ -11,7 +11,7 @@ curl -s https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/wsl_config.
 If you failed curl command, try this.
 
 ```
-sudo chmod 666 /etc/wsl.conf && sudo sh -c "echo '[boot]\nsystemd=true\n[network]\ngenerateResolvConf = false\n[automount]\noptions = \"metadata\"'" > /etc/wsl.conf
+sudo chmod 666 /etc/wsl.conf && sudo sh -c "echo '[boot]\nsystemd=true\n[network]\ngenerateResolvConf = false\n[user]\ndefault=shintaro\n[automount]\noptions = \"metadata\"\n[experimental]\nsparseVhd=true'" > /etc/wsl.conf
 ```
 
 And reboot wsl2.
@@ -37,6 +37,12 @@ Finally, use set up scripts.
 ```
 curl -o ~/temp_initialize.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/entry.sh && . ~/temp_initialize.sh && rm ~/temp_initialize.sh
 ```
+
+### Notes
+- Several operations are required during the process.
+- Only the ssh key needs to be set on the windows side first.
+- Set the alias in `enhancd/init.sh` to `ecd`.
+- Restart wsl (update docker execution permissions).
 
 ## for Ubuntu
 

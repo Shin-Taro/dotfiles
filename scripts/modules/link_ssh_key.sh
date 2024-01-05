@@ -1,6 +1,6 @@
 #!/bin/sh
 
-read -p "[HOST_USERNAME]:" HOST_USERNAME
+read -p "[HOST_USER_DIRECTORY_NAME]:" HOST_USERNAME
 
 # link Host OS ssh keys
 ln -s /mnt/c/Users/$HOST_USERNAME/.ssh ~/.ssh

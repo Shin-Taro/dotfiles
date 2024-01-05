@@ -40,10 +40,10 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# show git branch name for PS1
-function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
+# apply functions
+if [ -f ~/.functions ]; then
+    . ~/.functions
+fi
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -93,15 +93,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -117,17 +108,6 @@ source ~/enhancd/init.sh
 # PATH to asdf
 . "$HOME/.asdf/asdf.sh"
 
-## nodejs & yarn installer by asdf
-alias asdf_node='asdf list-all nodejs | fzf | xargs -i asdf install nodejs {} && corepack enable && asdf reshim nodejs && node --version && yarn --version'
-
-# override batcat
-alias bat='batcat'
-
-# my-functions
-function md() {
-  ecd $1 && cd .
-}
-
 function gfc() {
   git fetch origin $1 && git checkout $1
 }
@@ -135,23 +115,7 @@ function gfc() {
 # alias for Windows clipboard
 alias clip='clip.exe'
 
-# my-aliases
-alias cdls='md $(la | fzf)'
-alias kp='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
-alias lsbat='bat $(la | fzf)'
-
-## aliases for git
-alias gc='git checkout'
-alias fgc='gc $(git branch | fzf)'
-alias fgrb='git rebase $(git branch | fzf)'
-alias grh='git reset --hard HEAD'
-alias glo='git log --oneline'
-alias gs='git status'
-alias gri='git rebase -i'
-alias fgl='git log --oneline | fzf | sed -e "s/\([a-z0-9]\{7\}\).*/\1/" | xargs echo'
-alias fgri='gri $(fgl)'
-alias fgb='git branch --no-color | fzf | sed -e "s/* \(.*\)/\1/" | xargs echo'
-alias gbc='git branch --no-color | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/" | xargs echo'
-alias gpush='git push origin $(gbc)'
-alias gpull='git pull origin $(gbc)'
-alias gsu='git submodule update'
+# apply aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
