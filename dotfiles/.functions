@@ -1,0 +1,10 @@
+# directory navigation
+## avoid conflict between cd and enhancd
+function md() {
+  ecd $1 && cd .
+}
+
+# show git branch name
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
