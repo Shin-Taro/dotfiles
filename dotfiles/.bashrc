@@ -108,10 +108,6 @@ source ~/enhancd/init.sh
 # PATH to asdf
 . "$HOME/.asdf/asdf.sh"
 
-function gfc() {
-  git fetch origin $1 && git checkout $1
-}
-
 # alias for Windows clipboard
 alias clip='clip.exe'
 

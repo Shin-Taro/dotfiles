@@ -8,3 +8,8 @@ function md() {
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
+
+# fetch and checkout to target branch
+function gfc() {
+  git fetch origin $1 && git checkout $1
+}
