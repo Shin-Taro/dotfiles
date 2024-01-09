@@ -1,7 +1,14 @@
 #!/bin/sh
 
-read -p "[GIT_USER_NAME]:" USER_NAME
-read -p "[GIT_EMAIL]:" EMAIL
+if [ -n "$ZSH_VERSION" ]; then
+  read "USER_NAME?[GIT_USER_NAME]: "
+  read "EMAIL?[GIT_EMAIL]: "
+else
+  read -p "[GIT_USER_NAME]:" USER_NAME
+  read -p "[GIT_EMAIL]:" EMAIL
+fi
+
+
 
 git config --global user.name "${USER_NAME}"
 git config --global user.email "${EMAIL}"

@@ -27,6 +27,10 @@ cd dotfiles || return
 # install homebrew packages
 brew bundle --global
 
+# apply zsh settings
+. ~/.zshrc
+. ~/.zprofile
+
 # install enhancd
 cd ~ || return
 git clone https://github.com/b4b4r07/enhancd && vim enhancd/init.sh && wait . ~/enhancd/init.sh
@@ -34,10 +38,6 @@ git clone https://github.com/b4b4r07/enhancd && vim enhancd/init.sh && wait . ~/
 echo -e "\n\e[32;1m=============================================\e[m\n
 \e[32;1m( ﾉ ﾟｰﾟ)ﾉ \e[m Complete: The section of installing enhancd.\n
 \e[32;1m=============================================\e[m\n"
-
-# apply zsh settings
-. ~/.zshrc
-. ~/.zprofile
 
 # install Node.js
 . ~/dotfiles/scripts/modules/install_nodejs.sh
