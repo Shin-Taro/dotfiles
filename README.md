@@ -44,6 +44,29 @@ curl -o ~/temp_initialize.sh https://raw.githubusercontent.com/Shin-Taro/dotfile
 - Set the alias in `enhancd/init.sh` to `ecd`.
 - Restart wsl (update docker execution permissions).
 
+## for Mac
+First, set ssh key.
+```
+curl -o ~/temp_ssh.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/scripts/ssh_keygen.sh && . ~/temp_ssh.sh && rm ~/temp_ssh.sh
+```
+
+Then add the ssh key to gtihub.com and run the following to test the ssh connection.
+```
+$ ssh -T git@github_Shin-Taro
+```
+
+Second, install CLT for XCode.
+```
+xcode-select --install
+```
+
+Select "OK" when the popup appears.
+
+Finally, use set up scripts.
+```
+curl -o ~/temp_initialize.sh https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/entry_mac.sh && . ~/temp_initialize.sh && rm ~/temp_initialize.sh
+```
+
 ## for Ubuntu
 
 TBD
