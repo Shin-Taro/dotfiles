@@ -1,5 +1,8 @@
 #!/bin/sh
 
+
+cd ~ || return
+mkdir .ssh
 cd ~/.ssh/ || return
 mkdir Shin-Taro
 cd Shin-Taro || return
