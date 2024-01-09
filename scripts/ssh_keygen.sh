@@ -1,10 +1,8 @@
 #!/bin/sh
 
-
 cd ~ || return
 mkdir .ssh
-cd ~/.ssh/ || return
-mkdir Shin-Taro
+mkdir ~/.ssh/Shin-Taro
 cd Shin-Taro || return
 
 read -p "[EMAIL]:" EMAIL
@@ -14,5 +12,9 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/Shin-Taro/github
 
 cat ~/.ssh/Shin-Taro/github.pub
+
+touch ~/.ssh/config
+
+curl https://raw.githubusercontent.com/Shin-Taro/dotfiles/develop/configs/ssh_config > ~/.ssh/config
 
 cd ~ || return

@@ -1,0 +1,8 @@
+Host *
+  ServerAliveInterval 60
+  ServerAliveCountMax 30
+
+Host github_Shin-Taro
+  HostName github.com
+  IdentityFile ~/.ssh/Shin-Taro/github
+  User git
