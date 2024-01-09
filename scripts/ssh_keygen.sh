@@ -3,7 +3,7 @@
 cd ~ || return
 mkdir .ssh
 mkdir ~/.ssh/Shin-Taro
-cd Shin-Taro || return
+cd ~/.ssh/Shin-Taro || return
 
 read -p "[EMAIL]:" EMAIL
 
