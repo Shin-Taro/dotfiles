@@ -10,9 +10,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # nodejs & yarn installer by asdf
 alias asdf_node='asdf list-all nodejs | fzf | xargs -i asdf install nodejs {} && corepack enable && asdf reshim nodejs && node --version && yarn --version'
 
-# override batcat
-alias bat='batcat'
-
 # my-aliases
 alias cdls='md $(la | fzf)'
 alias kp='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'

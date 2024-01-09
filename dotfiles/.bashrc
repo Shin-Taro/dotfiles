@@ -103,13 +103,16 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # enhancd
-source ~/enhancd/init.sh
+. ~/enhancd/init.sh
 
 # PATH to asdf
 . "$HOME/.asdf/asdf.sh"
 
 # alias for Windows clipboard
 alias clip='clip.exe'
+
+# override batcat
+alias bat='batcat'
 
 # apply aliases
 if [ -f ~/.aliases ]; then
