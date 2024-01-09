@@ -40,6 +40,9 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# enhancd
+. ~/enhancd/init.sh
+
 # apply functions
 if [ -f ~/.functions ]; then
     . ~/.functions
@@ -101,9 +104,6 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# enhancd
-. ~/enhancd/init.sh
 
 # PATH to asdf
 . "$HOME/.asdf/asdf.sh"
