@@ -5,9 +5,7 @@ mkdir .ssh
 mkdir ~/.ssh/Shin-Taro
 cd ~/.ssh/Shin-Taro || return
 
-read -p "[EMAIL]:" EMAIL
-
-ssh-keygen -t ed25519 -C "${EMAIL}" -f github
+ssh-keygen -t ed25519 -f github
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/Shin-Taro/github
 
