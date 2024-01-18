@@ -9,11 +9,23 @@ set showmatch " 対応する括弧をハイライト
 set smartindent " 前の行のインデントを保持
 set mouse=a " マウスの有効化
 set shiftwidth=0 " タブの設定(タブ幅4の場合)
-set softtabstop=4
-set tabstop=4
+set softtabstop=2
+set tabstop=2
+set expandtab " タブ文字の代わりに空白
 set hlsearch " 検索結果をハイライト
 set incsearch " 最初の一文字を入力した時点から検索開始
 set wrapscan " ファイル末尾に到達すると再び先頭から検索
 
 set spell " スペルチェック
-set spelllang=en,cjk
+set spelllang+=cjk
+
+" カラースキーマ設定
+"" 行番号
+autocmd ColorScheme * highlight lineNr ctermfg=248 ctermbg=233 guifg=#CCCCCC
+"" スペルチェック
+autocmd ColorScheme * hi clear SpellBad
+    \| hi SpellBad cterm=underline ctermbg=none
+"" タイトル
+autocmd ColorScheme * highlight Title cterm=BOLD ctermfg=233 ctermbg=248
+
+colorscheme koehler
