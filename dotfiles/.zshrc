@@ -4,9 +4,6 @@ export PATH=/usr/local/bin/git:$PATH
 # launch comdef
 autoload -Uz compinit && compinit
 
-# path to asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 # enhancd
 . ~/enhancd/init.sh
 
