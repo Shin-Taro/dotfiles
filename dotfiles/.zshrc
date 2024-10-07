@@ -31,4 +31,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # custom prompt
-PROMPT="%F{green}%n@%h%f:%F{blue}%~%f:$(parse_git_branch)"$'\n'"%# "
+precmd(){
+  PROMPT="%F{green}%n@%h%f:%F{blue}%~%f:$(parse_git_branch)"$'\n'"%# "
+}
