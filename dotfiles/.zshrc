@@ -21,4 +21,6 @@ if [ -f ~/.functions ]; then
 fi
 
 # custom prompt
-PROMPT="%F{green}%n@%h%f:%F{blue}%~%f:$(parse_git_branch)"$'\n'"%# "
+precmd(){
+  PROMPT="%F{green}%n@%h%f:%F{blue}%~%f:$(parse_git_branch)"$'\n'"%# "
+}
