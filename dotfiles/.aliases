@@ -14,6 +14,9 @@ alias asdf_node='asdf list-all nodejs | fzf | xargs -i asdf install nodejs {} &&
 alias cdls='md $(la | fzf)'
 alias kp='lsof -i -P | fzf | sed -e "s/^[^ ]*[ ]*\([0-9]*\).*/\1/" | xargs -n1 kill -9'
 alias lsbat='bat $(la | fzf)'
+alias lsbatp='bat $(la | fzf --preview "bat --color=always {}" --preview-window=down:60%)'
+alias lsvim='vim $(la | fzf)'
+alias lsbatpr='bat $(fzf --preview "bat --color=always {}" --preview-window=down:60%)'
 
 ## aliases for git
 alias gc='git checkout'
